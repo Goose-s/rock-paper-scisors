@@ -20,7 +20,7 @@ function getComputerChoice()
     }
     else
     {
-    let computerSelection = ("rock")
+    let computerSelection = ("rock");
     
     }
 }
@@ -29,21 +29,32 @@ let playerSelection = prompt("Rock Paper or Scisors?");
 
 function startGame()
 {
+    //losing
     if (computerSelection == "scisors" && playerSelection == "paper")
     {
-        console.log("You lose Scisors beats Paper!")
+        console.log("You lose Scisors beats Paper!");
     }
 
     if (computerSelection == "rock" && playerSelection == "scisors")
     {
-        console.log("You lose Rock beats Scisors!")
+        console.log("You lose Rock beats Scisors!");
     }
     if (computerSelection == "paper" && playerSelection == "rock")
     {
-        console.log("You lose Rock beats Scisors!")
+        console.log("You lose Paper beats Rock!");
     }
-    if (computerSelection == "paper" && playerSelection == "rock")
+
+    //winning
+    if (computerSelection == "paper" && playerSelection == "scisors")
     {
-        console.log("You lose Rock beats Scisors!")
+        console.log("You win Scisors beats Paper!");
+    }
+    if (computerSelection == "rock" && playerSelection == "paper")
+    {
+        console.log("You win Paper beats Rock!");
+    }
+    if (computerSelection == "scisors" && playerSelection == "rock")
+    {
+        console.log("You win Rock beats scisors!");
     }
 }
