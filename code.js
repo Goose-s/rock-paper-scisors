@@ -25,15 +25,14 @@ function getComputerChoice()
     }
 }
 
-let playerSelection = prompt("Rock Paper or Scisors?").toLowerCase();
-
-
 let botScore= 0;
 let playerScore = 0;
 
 
+
 function startGame()
 {
+    let playerSelection = prompt("Rock Paper or Scisors?").toLowerCase();
     getComputerChoice();
     //losing
     if (computerSelection === "scisors" && playerSelection === "paper")
@@ -74,4 +73,16 @@ function startGame()
     {
         console.log("Draw!");
     }
+    if (botScore === 5)
+{
+    console.log("GAME OVER! YOU LOOSE")
+    botScore=0;
+    playerScore=0;
+}
+if (playerScore === 5)
+{
+    console.log("GAME OVER! YOU WIN")
+    botScore=0;
+    playerScore=0;
+}
 }
