@@ -5,56 +5,73 @@ function getRandomInt()
     return Math.floor(Math.random() * 3)+1;
 }
 
-
+let computerSelection
 function getComputerChoice()
 {
     if (getRandomInt() === 3)
     {
-    let computerSelection = ("scisors");
-  
+    computerSelection = "scisors";
+    return computerSelection;
     }
     else if (getRandomInt()=== 2)
     {
-    let computerSelection = ("paper");
-  
+    computerSelection = "paper";
+    return computerSelection;
     }
     else
     {
-    let computerSelection = ("rock");
-    
+    computerSelection = "rock";
+    return computerSelection;
     }
 }
 
-let playerSelection = prompt("Rock Paper or Scisors?");
+let playerSelection = prompt("Rock Paper or Scisors?").toLowerCase();
+
+
+let botScore= 0;
+let playerScore = 0;
+
 
 function startGame()
 {
+    getComputerChoice();
     //losing
-    if (computerSelection == "scisors" && playerSelection == "paper")
+    if (computerSelection === "scisors" && playerSelection === "paper")
     {
         console.log("You lose Scisors beats Paper!");
+        console.log("Bot = " + ++botScore + " You = " + playerScore);
     }
 
-    if (computerSelection == "rock" && playerSelection == "scisors")
+    else if (computerSelection === "rock" && playerSelection === "scisors")
     {
         console.log("You lose Rock beats Scisors!");
+        console.log("Bot = " + ++botScore + " You = " + playerScore);
     }
-    if (computerSelection == "paper" && playerSelection == "rock")
+    else if (computerSelection === "paper" && playerSelection === "rock")
     {
         console.log("You lose Paper beats Rock!");
+        console.log("Bot = " + ++botScore + " You = " + playerScore);
     }
 
     //winning
-    if (computerSelection == "paper" && playerSelection == "scisors")
+    else if (computerSelection === "paper" && playerSelection === "scisors")
     {
         console.log("You win Scisors beats Paper!");
+        console.log("Bot = " + botScore + " You = " + ++playerScore);
     }
-    if (computerSelection == "rock" && playerSelection == "paper")
+    else if (computerSelection === "rock" && playerSelection === "paper")
     {
         console.log("You win Paper beats Rock!");
+        console.log("Bot = " + botScore + " You = " + ++playerScore);
     }
-    if (computerSelection == "scisors" && playerSelection == "rock")
+    else if (computerSelection === "scisors" && playerSelection === "rock")
     {
-        console.log("You win Rock beats scisors!");
+        console.log("You win Rock beats Scisors!");
+        console.log("Bot = " + botScore + " You = " + ++playerScore);
+    }
+    //raw
+    else
+    {
+        console.log("Draw!");
     }
 }
